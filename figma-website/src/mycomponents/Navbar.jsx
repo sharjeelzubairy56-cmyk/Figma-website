@@ -4,6 +4,7 @@ function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
+        <>
         <nav className="nav">
           <div><h1 className="h3"> <Link to="/" >SHOP.CO</Link></h1></div>
             <div className="Shop">
@@ -23,8 +24,9 @@ function Navbar() {
                 <input type="text" placeholder="Search for products..." />
             </div>
             <div className="cart"><Link to="/Cart"><img src="/cart.png" height="20px"/></Link></div>
-            <div className="login"><img src="/login.png" height="20px"/></div>
-        </nav>
+            <div className="login"><img src="/login.png" height="20px" /></div>
+            </nav>
+        </>
     );
 }
 

@@ -6,28 +6,30 @@ import ItemDetails from './ItemDetails.jsx'
 import Cart from './Cart.jsx'
 import Footer from './Footer.jsx'
 import NewArrivals from './NewArrivals.jsx'
+import TopSelling from './TopSelling.jsx'
+import Browse from './Browse.jsx'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 function App() {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <><Navbar /><Universal /><Footer /><NewArrivals /></>
+            element: <><Navbar /><Universal /><Footer /><NewArrivals /><hr /><TopSelling /><Browse /></>
         },
         {
             path: '/Shop',
-            element: <><Navbar /><Shop /></>
+            element: <><Navbar /> <hr /><Shop /></>
         },
         {
             path: '/ItemDetails',
-            element: <><Navbar /><ItemDetails /></>
+            element: <><Navbar /> <hr /><ItemDetails /></>
         }, {
             path: '/Cart',
-            element: <><Navbar /><Cart /></>
+            element: <><Navbar /> <hr /><Cart /></>
         },
         {
             path: '/NewArrivals',
-            element: <><Navbar /><NewArrivals /></>
+            element: <><Navbar /> <hr /><NewArrivals /></>
         }
     ]);
     return (
