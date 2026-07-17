@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Figma-website/figma-website.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
