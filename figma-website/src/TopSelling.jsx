@@ -34,7 +34,7 @@ function TopSelling() {
               </Link>
           </div>
           <div>
-              <center><button className="view">View All</button> </center>
+              <Link to="/NewArrivals"><center><button className="view">View All</button> </center></Link>
           </div>
       </div>
   );
