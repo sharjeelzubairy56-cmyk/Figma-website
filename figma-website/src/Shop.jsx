@@ -3,7 +3,7 @@ function Shop() {
     return (
         <>
         <div>I am inside the shop.jsx</div>
-            <button><Link to="/ItemDetails">Click me to open the details</Link></button>
+            <button className="btnnot"><Link to="/ItemDetails">Click me to open the details</Link></button>
       </>
   );
 }
