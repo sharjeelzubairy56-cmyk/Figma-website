@@ -22,8 +22,8 @@ function Navbar() {
                 </svg>
                 <input type="text" placeholder="Search for products..." />
             </div>
-            <div className="cart"><Link to="/Cart"><img src="./src/assets/cart.png" height="20px"/></Link></div>
-            <div className="login"><img src="./src/assets/login.png" height="20px"/></div>
+            <div className="cart"><Link to="/Cart"><img src="/cart.png" height="20px"/></Link></div>
+            <div className="login"><img src="/login.png" height="20px"/></div>
         </nav>
     );
 }
