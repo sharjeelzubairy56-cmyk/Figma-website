@@ -16,18 +16,18 @@ function App() {
         },
         {
             path: '/Shop',
-            element: <><Navbar /><Shop /><Footer /></>
+            element: <><Navbar /><Shop /></>
         },
         {
             path: '/ItemDetails',
-            element: <><Navbar /><ItemDetails /><Footer /></>
+            element: <><Navbar /><ItemDetails /></>
         }, {
             path: '/Cart',
-            element: <><Navbar /><Cart /><Footer /></>
+            element: <><Navbar /><Cart /></>
         },
         {
             path: '/NewArrivals',
-            element: <><Navbar /><NewArrivals /><Footer /></>
+            element: <><Navbar /><NewArrivals /></>
         }
     ]);
     return (
