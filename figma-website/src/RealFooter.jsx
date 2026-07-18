@@ -12,9 +12,14 @@ const RealFooter = () => {
         }
     }, [handleaction]);
     const handleSubscribeClick = () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (text === "") {
             alert("Pls enter the email before subscribing");
-        } else {
+        }
+        else if (!emailRegex.test(text.trim())) {
+            alert("You entered the wrong format. Please check your email address.");
+        }
+        else {
             setHandleaction(true);
         }
     };
