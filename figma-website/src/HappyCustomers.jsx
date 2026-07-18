@@ -4,7 +4,8 @@ function HappyCustomers() {
           <div className="hc">OUR HAPPY CUSTOMERS</div>
           <div className="h1">
               <div className="r">
-                  <div className="name">Sarah M.</div>
+                  <div class="rating-row">⭐⭐⭐⭐</div>
+                  <div className="name">Sarah M.   ✅</div>
                   <div className="reviews1">
                   "I am blown away  by the quality and style of
                   clothes I received from the Shop.co. From casual  wear to elegent dresses. Every piece I have bought
@@ -12,7 +13,8 @@ function HappyCustomers() {
                   </div>
                   </div>
               <div className="r">
-                  <div className="name">Alex K.</div>
+                  <div class="rating-row">⭐⭐⭐⭐</div>
+                  <div className="name">Alex K.   ✅</div>
                   <div className="reviews1">
                       "I am blown away  by the quality and style of
                       clothes I received from the Shop.co. From casual  wear to elegent dresses. Every piece I have bought
@@ -20,7 +22,8 @@ function HappyCustomers() {
                   </div>
               </div>
               <div className="r">
-                  <div className="name">James L.</div>
+                  <div class="rating-row">⭐⭐⭐⭐</div>
+                  <div className="name">James L.   ✅</div>
                   <div className="reviews1">
                       "I am blown away  by the quality and style of
                       clothes I received from the Shop.co. From casual  wear to elegent dresses. Every piece I have bought
