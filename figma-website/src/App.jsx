@@ -8,13 +8,15 @@ import Footer from './Footer.jsx'
 import NewArrivals from './NewArrivals.jsx'
 import TopSelling from './TopSelling.jsx'
 import Browse from './Browse.jsx'
+import HappyCustomers from './HappyCustomers.jsx'
+import RealFooter from './RealFooter.jsx'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 function App() {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <><Navbar /><Universal /><Footer /><NewArrivals /><hr /><TopSelling /><Browse /></>
+            element: <><Navbar /><Universal /><Footer /><NewArrivals /><hr /><TopSelling /><Browse /><HappyCustomers /><RealFooter/></>
         },
         {
             path: '/Shop',
