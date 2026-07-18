@@ -3,9 +3,12 @@ import {Link} from 'react-router-dom'
 function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
     const [text, setText] = useState("");
-    const handleaction=(() => {
+    const handleaction = () => {
         setText("");
-    })
+    };
+    const change = (() => {
+        alert("type something to search first");
+    }) 
     return (
         <>
         <nav className="nav">
@@ -18,10 +21,11 @@ function Navbar() {
             </div>
             <div className="shop">On Sale</div>
            <Link to="/NewArrivals"><div className="shop">New Arrivals</div></Link>
-            <div className="shop">Brands</div>
+                <div className="shop">Brands</div>
+               
                 <div className="input">
-                        <Link onClick={handleaction} to={
-                        text.trim().toLowerCase() === "new arrivals" ? "/NewArrivals" : text.trim().toLowerCase() === "top selling" ? "/TopSelling" : text.trim().toLowerCase() ==="t-shirt with tape details"?"/ItemDetails" : "#"
+                    <Link onClick = {text.trim()===""?change:handleaction} to={
+                        text.trim().toLowerCase() === "new arrivals" ? "/NewArrivals" : text.trim().toLowerCase() === "top selling" ? "/TopSelling" : text.trim().toLowerCase() === "t-shirt with tape details" ? "/ItemDetails" : text.trim().toLowerCase() ===""?"#": "/Error"
                     }>
                 <svg className="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5" />

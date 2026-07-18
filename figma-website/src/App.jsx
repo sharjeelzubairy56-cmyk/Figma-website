@@ -10,6 +10,7 @@ import TopSelling from './TopSelling.jsx'
 import Browse from './Browse.jsx'
 import HappyCustomers from './HappyCustomers.jsx'
 import RealFooter from './RealFooter.jsx'
+import Error from './Error.jsx'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 function App() {
@@ -36,6 +37,10 @@ function App() {
         {
             path: '/TopSelling',
             element: <><Navbar /> <hr /><TopSelling /></>
+        },
+        {
+            path: '/Error',
+            element: <><Navbar /> <hr /><Error /></>
         }
     ]);
     return (
