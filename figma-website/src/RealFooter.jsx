@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 const RealFooter = () => {
     const [text, setText] = useState("");
-    const handleaction = () => {
-        setText("");
-    }
+    const [handleaction, setHandleaction] = useState(false);
+    useEffect(() => {
+        if (handleaction) {
+            setText("");
+            setHandleaction(false);
+        }
+    }, [handleaction]);
     return (
         <footer className="real-footer">
             <div className="rf-display">
@@ -17,7 +21,7 @@ const RealFooter = () => {
                         <div className="rf-newsletter-input-wrapper">
                             <input type="email" value={text} onChange={(e) =>setText(e.target.value) } placeholder="Enter your email address" />
                         </div>
-                        <button className="rf-subscribe-btn" onClick={handleaction}>Subscribe to Newsletter</button>
+                        <button className="rf-subscribe-btn" onClick={()=>setHandleaction(true)}>Subscribe to Newsletter</button>
                     </div>
                 </div>
                 <div className="rf-links">
