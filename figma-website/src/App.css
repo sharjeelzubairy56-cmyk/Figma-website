@@ -338,27 +338,6 @@ font-size:3vh;
     margin: 0 0 20px;
 }
 
-.rf-social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-    .rf-social-icons a {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: black;
-    }
-
-    .rf-social-icons svg {
-        width: 14px;
-        height: 14px;
-    }
-
 .rf-col h4 {
     font-size: 13px;
     font-weight: 600;

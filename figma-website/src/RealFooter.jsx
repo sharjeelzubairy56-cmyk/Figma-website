@@ -3,12 +3,21 @@ import { useState,useEffect } from 'react'
 const RealFooter = () => {
     const [text, setText] = useState("");
     const [handleaction, setHandleaction] = useState(false);
+    const [subscribed, isSubscribed] = useState(false);
     useEffect(() => {
         if (handleaction) {
             setText("");
             setHandleaction(false);
+            isSubscribed(true);
         }
     }, [handleaction]);
+    const handleSubscribeClick = () => {
+        if (text === "") {
+            alert("Pls enter the email before subscribing");
+        } else {
+            setHandleaction(true);
+        }
+    };
     return (
         <footer className="real-footer">
             <div className="rf-display">
@@ -21,7 +30,7 @@ const RealFooter = () => {
                         <div className="rf-newsletter-input-wrapper">
                             <input type="email" value={text} onChange={(e) =>setText(e.target.value) } placeholder="Enter your email address" />
                         </div>
-                        <button className="rf-subscribe-btn" onClick={()=>setHandleaction(true)}>Subscribe to Newsletter</button>
+                        <button className="rf-subscribe-btn" onClick={handleSubscribeClick}>{subscribed?"Subscribed":"Subscribe to Newsletter"}</button>
                     </div>
                 </div>
                 <div className="rf-links">

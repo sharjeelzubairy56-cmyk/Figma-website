@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import {Link} from 'react-router-dom'
 function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
-
+    const [text, setText] = useState("");
+    const handleaction=(() => {
+        setText("");
+    })
     return (
         <>
         <nav className="nav">
@@ -16,12 +19,16 @@ function Navbar() {
             <div className="shop">On Sale</div>
            <Link to="/NewArrivals"><div className="shop">New Arrivals</div></Link>
             <div className="shop">Brands</div>
-            <div className="input">
+                <div className="input">
+                        <Link onClick={handleaction} to={
+                        text.trim().toLowerCase() === "new arrivals" ? "/NewArrivals" : text.trim().toLowerCase() === "top selling" ? "/TopSelling" : text.trim().toLowerCase() ==="t-shirt with tape details"?"/ItemDetails" : "#"
+                    }>
                 <svg className="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5" />
                     <path d="M11.5 11.5L15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-                <input type="text" placeholder="Search for products..." />
+                        </svg>
+                        </Link>
+                    <input type="text" value={text} onChange={(e)=>setText(e.target.value)} placeholder="Search for products..." />
             </div>
             <div className="cart"><Link to="/Cart"><img src="/cart.png" height="20px"/></Link></div>
             <div className="login"><img src="/login.png" height="20px" /></div>

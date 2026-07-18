@@ -32,6 +32,10 @@ function App() {
         {
             path: '/NewArrivals',
             element: <><Navbar /> <hr /><NewArrivals /></>
+        },
+        {
+            path: '/TopSelling',
+            element: <><Navbar /> <hr /><TopSelling /></>
         }
     ]);
     return (
