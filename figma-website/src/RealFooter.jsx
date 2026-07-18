@@ -20,6 +20,7 @@ const RealFooter = () => {
             alert("You entered the wrong format. Please check your email address.");
         }
         else {
+            alert("You have subscribed and now u will stay uptodate with our latest offers")
             setHandleaction(true);
         }
     };
