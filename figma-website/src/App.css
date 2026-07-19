@@ -38,11 +38,6 @@ input {
     align-items: center;
     margin-left: 20px;
 }
-svg {
-    margin-left: 5px;
-    height: 13px;
-    width: 10px;
-}
 .input {
     display: flex;
     align-items: center;
@@ -107,7 +102,7 @@ font-weight:bold;
     border: 1px solid black;
     padding-left: 100px;
     padding-right: 80px;
-    height: 9vh;
+    height: 9.5vh;
     align-items: center;
     Font-Family: Satoshi;
     background-color:black;
@@ -597,4 +592,28 @@ font-weight:bolder;
     line-height: 6vh;
     color: gray;
     cursor:pointer;
+}
+.itemdetails {
+display:flex;
+border:1px solid black;
+margin:80px;
+height:50vh;
+width:88vw;
+gap:2vw;
+}
+.idimage {
+    height: 50vh;
+    width: 24vw;
+    border:1px solid black;
+}
+.details {
+    height: 50vh;
+    width: 64vw;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.tsdetail {
+font-weight:bolder;
+font-size:7vh;
 }
