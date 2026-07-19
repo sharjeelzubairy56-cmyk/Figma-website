@@ -6,39 +6,39 @@ function NewArrivals() {
             <div className="cards-container">
             <Link to="/ItemDetails">
                 <div className="nd">
-                    <div className="im"><img src="/shirt.jpg" height="100%" width="100%"/></div>
-                        <div>T-Shirt with tape details</div>
-                        <div class="rating-row">⭐⭐⭐⭐ <span>3.5/5</span></div>
+                        <div className="im"><img src="/shirt.jpg" height="100%" width="100%"/></div>
+                        <div className="bold">T-Shirt with tape details</div>
+                        <div class="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
                     <div className="bold">$ 120</div>
                     </div>
                 </Link>
                 <Link to="/ItemDetails">
                     <div className="nd">
                         <div className="im"><img src="/shirt.jpg" height="100%" width="100%" /></div>
-                        <div>T-Shirt with tape details</div>
-                        <div class="rating-row">⭐⭐⭐⭐ <span>3.5/5</span></div>
+                        <div className="bold">T-Shirt with tape details</div>
+                        <div class="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
                         <div className="bold">$ 120</div>
                     </div>
                 </Link>
                 <Link to="/ItemDetails">
                     <div className="nd">
                         <div className="im"><img src="/shirt.jpg" height="100%" width="100%" /></div>
-                        <div>T-Shirt with tape details</div>
-                        <div class="rating-row">⭐⭐⭐⭐ <span>3.5/5</span></div>
+                        <div className="bold">T-Shirt with tape details</div>
+                        <div class="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
                         <div className="bold">$ 120</div>
                     </div>
                 </Link>
                 <Link to="/ItemDetails">
                     <div className="nd">
                         <div className="im"><img src="/shirt.jpg" height="100%" width="100%" /></div>
-                        <div>T-Shirt with tape details</div>
-                        <div class="rating-row">⭐⭐⭐⭐ <span>3.5/5</span></div>
+                        <div className="bold">T-Shirt with tape details</div>
+                        <div class="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
                         <div className="bold">$ 120</div>
                     </div>
                 </Link>
             </div>
             <div>
-                <Link to="/NewArrivals"><center><button className="view">View All</button> </center></Link>
+                <Link to="/Shop"><center><button className="view">View All</button> </center></Link>
             </div>   
         </div>
   );

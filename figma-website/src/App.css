@@ -7,8 +7,9 @@
     Font-Family: Satoshi;
 }
 * {
-margin:0;
-padding:0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 input {
     background-color: lightgrey;
@@ -217,7 +218,7 @@ font-weight:bolder;
     margin-top: 40px;
 }
 .happycustomers {
-    height: 45vh;
+    height: 60vh;
     width: 80%;
     margin-left: 140px;
     margin-top: 70px;
@@ -229,7 +230,7 @@ font-weight:bolder;
 }
 .h1{
     display:flex;
-    height:34vh;
+    height:38vh;
     width:100%;
     margin-top:4vh;
 }
@@ -367,10 +368,233 @@ font-size:3vh;
     }
 
 .onsale {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    padding: 50px;
+    font-weight: bolder;
+}
+.shopjsx {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    height:180vh;
+    margin-top:4rem;
+    gap: 1vw;
+    box-sizing: border-box;
+}
+.casualh1 {
+    font-weight:100;
+    font-size:6vh;
+}
+.casualshop {
+    height:90vh;
+    width: 70vw;
+}
+.shopcards-container {
+    display: flex;
+    flex-direction: row;
+    height: 55vh;
+    width: 70vw;
+    gap: 8vw;
+    margin-top:3vh;
+}
+
+    .shopcards-container a {
+        width: 23%;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+.shopnd {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 27vw;
+    line-height: 5vh;
+}
+.filter {
+    border: 1px solid #E5E5E5;
+    border-radius: 20px;
+    padding: 24px;
+    box-sizing: border-box;
+    width: 18vw;
+    height: 170vh;
+    margin-left: 4.5vw;
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+}
+.filter hr {
+    border: none;
+    border-top: 1px solid #F2F0F1;
+    margin: 20px 0;
+}
+
+.filter-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.filter-index-row a {
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 15px;
+}
+
+.filter-section {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.price-slider {
+    width: 100%;
+    accent-color: black;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: gray;
+}
+.colors{
+ height:30vh;
+ width:14.3vw;
+}
+.c1header {
+    display: flex;
+    width: 14.3vw;
+    height: 12vh;
+    padding-bottom: 2vh;
+    gap:5px;
+}
+.c1 {
+        width: 38px;
+        height: 38px;
+        background-color:green;
+        border-radius: 50%;
+        border: 1px solid #E5E5E5;
+}
+.c2 {
+    width: 38px;
+    height: 38px;
+    background-color: red;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.c3 {
+    width: 38px;
+    height: 38px;
+    background-color: yellow;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.c4 {
+    width: 38px;
+    height: 38px;
+    background-color: orange;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.c5 {
+    width: 38px;
+    height: 38px;
+    background-color: gray;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.c6 {
+    width: 38px;
+    height: 38px;
+    background-color: blue;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.c7 {
+    width: 38px;
+    height: 38px;
+    background-color: purple;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.c8 {
+    width: 38px;
+    height: 38px;
+    background-color: pink;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.c9 {
+    width: 38px;
+    height: 38px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.c10 {
+    width: 38px;
+    height: 38px;
+    background-color: black;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+}
+.filter-section1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.checkerror {
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:4rem;
-padding:50px;
+font-size:10vh;
+height:100vh;width:100%;
 font-weight:bolder;
+}
+
+.size {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.headsize {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sizebuttons {
+    display: flex;
+    gap: 8px;
+}
+
+.size button {
+    background-color: #F2F0F1;
+    border: none;
+    color: gray;
+    width: 6vw;
+    height: 4.5vh; 
+    margin: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.dressstyle a {
+    display: flex;
+    flex-direction: column;
+    line-height: 6vh;
+    color: gray;
+    cursor:pointer;
 }
