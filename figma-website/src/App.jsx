@@ -11,6 +11,7 @@ import Browse from './Browse.jsx'
 import HappyCustomers from './HappyCustomers.jsx'
 import RealFooter from './RealFooter.jsx'
 import Error from './Error.jsx'
+import OnSale from './OnSale.jsx'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 function App() {
@@ -21,26 +22,30 @@ function App() {
         },
         {
             path: '/Shop',
-            element: <><Navbar /> <hr /><Shop /></>
+            element: <><Navbar /> <hr /><Shop /><RealFooter /></>
         },
         {
             path: '/ItemDetails',
-            element: <><Navbar /> <hr /><ItemDetails /></>
+            element: <><Navbar /> <hr /><ItemDetails /><RealFooter /></>
         }, {
             path: '/Cart',
-            element: <><Navbar /> <hr /><Cart /></>
+            element: <><Navbar /> <hr /><Cart /><RealFooter /></>
         },
         {
             path: '/NewArrivals',
-            element: <><Navbar /> <hr /><NewArrivals /></>
+            element: <><Navbar /> <hr /><NewArrivals /><RealFooter /></>
         },
         {
             path: '/TopSelling',
-            element: <><Navbar /> <hr /><TopSelling /></>
+            element: <><Navbar /> <hr /><TopSelling /><RealFooter/></>
         },
         {
             path: '/Error',
             element: <><Navbar /> <hr /><Error /></>
+        },
+        {
+            path: '/OnSale',
+            element:<><Navbar /><hr/><OnSale /><RealFooter /></>
         }
     ]);
     return (

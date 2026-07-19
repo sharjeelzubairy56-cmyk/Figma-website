@@ -19,9 +19,9 @@ function Navbar() {
                     <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
-            <div className="shop">On Sale</div>
+          <Link to="/OnSale"><div className="shop">On Sale</div></Link>
            <Link to="/NewArrivals"><div className="shop">New Arrivals</div></Link>
-                <div className="shop">Brands</div>
+                <Link to="/TopSelling"><div className="shop">Top Selling</div></Link>
                
                 <div className="input">
                     <Link onClick = {text.trim()===""?change:handleaction} to={

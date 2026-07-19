@@ -366,3 +366,11 @@ font-size:3vh;
         color: black;
     }
 
+.onsale {
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:4rem;
+padding:50px;
+font-weight:bolder;
+}
