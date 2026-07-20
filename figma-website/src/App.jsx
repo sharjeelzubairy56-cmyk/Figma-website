@@ -13,7 +13,6 @@ import RealFooter from './RealFooter.jsx'
 import Error from './Error.jsx'
 import OnSale from './OnSale.jsx'
 import SIZE from './Context.jsx'
-import Ending from './Ending.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
@@ -51,10 +50,6 @@ function App() {
         {
             path: '/OnSale',
             element: <><Navbar /><hr /><OnSale /><RealFooter /></>
-        },
-        {
-            path: '/Ending',
-            element:<><Navbar/><hr/><Ending/><RealFooter/></>
         }
     ]);
     return (
