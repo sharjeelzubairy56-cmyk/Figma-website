@@ -66,11 +66,11 @@ function ItemDetails() {
                 </div>
                 <hr />
                 <div className="flex items-center justify-center h-20 gap-4">
-                        <button className="cursor-pointer pl-1 w-[32%] h-[55%] bg-[#F0F0F0] border-0 text-gray-600 gap-3">
+                        <div className="cursor-pointer pl-1 w-[32%] h-[55%] bg-[#F0F0F0] border-0 text-gray-600 gap-3">
                             <button onClick={() => { setValue(value > 1 ? prev=>prev - 1 : 1); setPrice(base * (value-1)); }} className="cursor-pointer h-auto text-10x1 bg-[#F0F0F0] border-0 text-black font-black">➖</button>
                             {value}
                             <button onClick={() => { setValue(prev=>prev + 1); setPrice(base * (value+1)); }} className="cursor-pointer h-[10%]  text-10x1 bg-[#F0F0F0] border-0 text-black font-black">➕</button>
-                        </button>
+                        </div>
                         <button onClick={() => { setSize(selectedSize); setCart(false); }} className="cursor-pointer w-[62%] h-[55%] bg-black">{cart?("Add to cart"):("Added to cart")}</button>
                 </div>
             </div>
