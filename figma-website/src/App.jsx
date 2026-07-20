@@ -54,7 +54,7 @@ function App() {
         },
         {
             path: '/Ending',
-            element:<><Navbar/><Ending/><RealFooter/></>
+            element:<><Navbar/><hr/><Ending/><RealFooter/></>
         }
     ]);
     return (
