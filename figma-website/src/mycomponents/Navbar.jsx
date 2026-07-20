@@ -1,4 +1,5 @@
-import { useState,useEffect } from 'react'
+import '../App.css'
+import { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 function Navbar() {
     const [isHovered, setIsHovered] = useState(false);
@@ -15,9 +16,6 @@ function Navbar() {
           <div><h1 className="h3"> <Link to="/" >SHOP.CO</Link></h1></div>
             <div className="Shop">
                 <div><Link to="/Shop">Shop</Link></div>
-                <svg className="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
             </div>
           <Link to="/OnSale"><div className="shop">On Sale</div></Link>
            <Link to="/NewArrivals"><div className="shop">New Arrivals</div></Link>

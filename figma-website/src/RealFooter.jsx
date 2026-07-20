@@ -1,4 +1,5 @@
-import { useState,useEffect } from 'react'
+import './App.css'
+import { useState, useEffect } from 'react'
 
 const RealFooter = () => {
     const [text, setText] = useState("");

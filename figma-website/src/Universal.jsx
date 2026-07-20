@@ -1,3 +1,4 @@
+import './App.css'
 import figmaImage from './assets/figmaimage.jpg';
 import { Link } from 'react-router-dom'
 function Universal() {

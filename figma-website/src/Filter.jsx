@@ -1,3 +1,4 @@
+import './App.css'
 import { useState } from "react";
 const categories = ["T-shirts", "Shorts", "Shirts", "Hoodie", "Jeans"];
 

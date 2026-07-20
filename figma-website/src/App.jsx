@@ -12,13 +12,18 @@ import HappyCustomers from './HappyCustomers.jsx'
 import RealFooter from './RealFooter.jsx'
 import Error from './Error.jsx'
 import OnSale from './OnSale.jsx'
-import './App.css'
+import SIZE from './Context.jsx'
+import Ending from './Ending.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 function App() {
+    const [size, setSize] = useState("small");
+    const [cartItems, setCartItems] = useState([]);
+
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <><Navbar /><Universal /><Footer /><NewArrivals /><hr /><TopSelling /><Browse /><HappyCustomers /><RealFooter/></>
+            element: <><Navbar /><Universal /><Footer /><NewArrivals /><hr /><TopSelling /><Browse /><HappyCustomers /><RealFooter /></>
         },
         {
             path: '/Shop',
@@ -37,7 +42,7 @@ function App() {
         },
         {
             path: '/TopSelling',
-            element: <><Navbar /> <hr /><TopSelling /><RealFooter/></>
+            element: <><Navbar /> <hr /><TopSelling /><RealFooter /></>
         },
         {
             path: '/Error',
@@ -45,12 +50,17 @@ function App() {
         },
         {
             path: '/OnSale',
-            element:<><Navbar /><hr/><OnSale /><RealFooter /></>
+            element: <><Navbar /><hr /><OnSale /><RealFooter /></>
+        },
+        {
+            path: '/Ending',
+            element:<><Navbar/><Ending/><RealFooter/></>
         }
     ]);
     return (
-        <RouterProvider router={router} />
+        <SIZE.Provider value={{ size, setSize, cartItems, setCartItems }}>
+            <RouterProvider router={router} />
+        </SIZE.Provider>
     )
 }
-
-export default App
+export default App;

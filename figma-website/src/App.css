@@ -1,3 +1,4 @@
+
 .nav {
     display: flex;
     background-color: white;
@@ -480,70 +481,70 @@ font-size:3vh;
         height: 38px;
         background-color:green;
         border-radius: 50%;
-        border: 1px solid #E5E5E5;
+        border: 1px solid white;
 }
 .c2 {
     width: 38px;
     height: 38px;
     background-color: red;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .c3 {
     width: 38px;
     height: 38px;
     background-color: yellow;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .c4 {
     width: 38px;
     height: 38px;
     background-color: orange;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .c5 {
     width: 38px;
     height: 38px;
     background-color: gray;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .c6 {
     width: 38px;
     height: 38px;
     background-color: blue;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .c7 {
     width: 38px;
     height: 38px;
     background-color: purple;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .c8 {
     width: 38px;
     height: 38px;
     background-color: pink;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .c9 {
     width: 38px;
     height: 38px;
     background-color: white;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .c10 {
     width: 38px;
     height: 38px;
     background-color: black;
     border-radius: 50%;
-    border: 1px solid #E5E5E5;
+    border: 1px solid white;
 }
 .filter-section1 {
     font-size: 20px;
@@ -592,28 +593,4 @@ font-weight:bolder;
     line-height: 6vh;
     color: gray;
     cursor:pointer;
-}
-.itemdetails {
-display:flex;
-border:1px solid black;
-margin:80px;
-height:50vh;
-width:88vw;
-gap:2vw;
-}
-.idimage {
-    height: 50vh;
-    width: 24vw;
-    border:1px solid black;
-}
-.details {
-    height: 50vh;
-    width: 64vw;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-}
-.tsdetail {
-font-weight:bolder;
-font-size:7vh;
 }
