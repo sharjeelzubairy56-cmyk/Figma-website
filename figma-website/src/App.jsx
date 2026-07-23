@@ -27,7 +27,7 @@ function App() {
         },
         {
             path: '/Shop',
-            element: <><Navbar /> <hr /><Shop /><RealFooter /></>
+            element: <><Navbar /> <hr /><Shop /></>
         },
         {
             path: '/ItemDetails',
