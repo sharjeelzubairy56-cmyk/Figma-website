@@ -71,12 +71,16 @@ function Cart() {
                 </div>
                 <div className="flex justify-between items-center text-lg text-gray-500 mb-4">
                     <div>Delivery Fee</div>
-                    <div className="font-black text-black">$15</div>
+                    {subtotal==0 ?
+                        (<div className="font-black text-black">$0</div>) : (<div className="font-black text-black">$15</div>)
+                    }
+                   
                 </div>
                 <hr />
                 <div className="flex justify-between items-center text-lg mt-4">
                     <div>Total</div>
-                    <div className="font-black text-xl">${subtotal + 15}</div>
+                    {subtotal == 0 ?
+                        (<div className="font-black text-xl">${subtotal}</div>) : (<div className="font-black text-xl">${subtotal + 15}</div>)}
                 </div>
                 <button className="flex justify-content items-center w-150 mx-80"><Link to="/Ending">Go To Checkout</Link></button>
             </div>
