@@ -43,7 +43,7 @@ function Cart() {
                                         <div className=" h-14 w-[30%] flex items-center justify-end pr-28" onClick={() => handleDelete(index)}><img src="delete.png" height="50%" width="17%" /></div>
                                     </div>
                                     <div className=" h-14 w-[70%] pl-10 flex items-center justify-start text-2xl tracking-tight"><b>Color :</b> &nbsp; white</div>
-                                    <div className=" h-14 w-[70%] pl-10 flex items-center justify-start text-2xl tracking-tight"><b>Size&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;&nbsp;{size}</div>
+                                    <div className=" h-14 w-[70%] pl-10 flex items-center justify-start text-2xl tracking-tight"><b>Size&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;&nbsp;{itemSize}</div>
                                     <div className="flex">
                                         <div className=" h-14 w-[70%] pl-10 flex items-center justify-start text-2xl tracking-tight font-black">
                                             ${getBasePrice(itemSize) * value}
