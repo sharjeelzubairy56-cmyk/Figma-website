@@ -29,7 +29,7 @@ SHOP.CO takes a Figma e-commerce design and rebuilds it as an actual working app
 | Routing | React Router DOM `^7.18.1` |
 | Styling | Tailwind CSS `^4.3.3` + `@tailwindcss/vite` |
 | HTTP client | Axios `^1.18.1` |
-| Hosting | Vercel — custom domain via GoDaddy |
+| Hosting | Vercel |
 | IDE | Visual Studio (`.slnx` / `.esproj`) |
 
 ## Getting Started
