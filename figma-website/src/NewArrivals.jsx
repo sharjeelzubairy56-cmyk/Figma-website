@@ -31,7 +31,7 @@ function NewArrivals() {
                     <div className="na">New Arrivals</div>
                     <div className="cards-container">
                         {currentFour.map((item) => (
-                            <Link to="/ItemDetails" key={item.id}>
+                            <Link to="/ItemDetails" state={{ index: item.id }} key={item.id}>
                                 <div className="nd">
                                     <div className="im">
                                         <img src={item.image} alt={item.title} height="100%" width="100%" />

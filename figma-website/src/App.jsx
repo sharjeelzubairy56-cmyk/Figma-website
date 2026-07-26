@@ -15,7 +15,6 @@ import OnSale from './OnSale.jsx'
 import SIZE from './Context.jsx'
 import Ending from './Ending.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
 function App() {
     const [size, setSize] = useState("small");
     const [cartItems, setCartItems] = useState([]);

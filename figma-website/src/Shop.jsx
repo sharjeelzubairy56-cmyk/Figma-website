@@ -147,7 +147,7 @@ function Shop() {
                             {sections.map((currentThree, sectionIdx) => (
                                 <div className="shopcards-container" key={sectionIdx}>
                                     {currentThree.map((item) => (
-                                        <Link to="/ItemDetails" key={item.id}>
+                                        <Link to="/ItemDetails" state={{ index: item.id }} key={item.id}>
                                             <div className="shopnd">
                                                 <div className="im">
                                                     <img

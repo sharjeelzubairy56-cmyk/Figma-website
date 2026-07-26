@@ -1,22 +1,54 @@
 import './Tailwind.css';
-import { Link } from 'react-router-dom';
-import { useState,useContext } from 'react';
+import { Link,useLocation } from 'react-router-dom';
+import { useState, useContext, useEffect } from 'react';
 import SIZE from './Context.jsx'
+import axios from 'axios';
 function ItemDetails() {
-    const [price, setPrice] = useState(120);
+    const location = useLocation();
+    const productIndex = location.state?.index;
+    const index = productIndex !== undefined ? productIndex - 1 : 0;
     const [selectedSize, setSelectedSize] = useState('Small');
     const { setSize } = useContext(SIZE);
     const [value, setValue] = useState(1);
     const [base, setBase] = useState(120);
     const [cart, setCart] = useState(true);
+    const [ind, setInd] = useState();
+    const [products, setProducts] = useState([]);
+    const [check, setCheck] = useState(false);
+    const [price, setPrice] = useState();
+    const API = "https://fakestoreapi.com/products";
+    const getdata = async () => {
+        try {
+            const res = await axios.get(API);
+            setProducts(res.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    useEffect(() => {
+        if (products.length > 0 && products[index]) {
+            setPrice(products[index].price);
+            setBase(products[index].price);
+        }
+    }, [products, index]);
+    const fun = () => {
+        if (!check) { setCheck(true); }
+        else { setCheck(false); }
+    };
+    const i = (e) => {
+        setInd(e);
+    };
+    useEffect(() => {
+        getdata();
+    }, []);
     const priceselect = (e) => {
         if (e === 'Medium') {
-            setPrice(130);
-            setBase(130);
+            setPrice(products[index]?.price +10);
+            setBase(products[index]?.price +10);
         }
-        else if (e === 'Large') { setPrice(140); setBase(140); }
-        else if (e === 'X-Large') { setPrice(150); setBase(150); }
-        else { setPrice(120); setBase(120); }
+        else if (e === 'Large') { setPrice(products[index]?.price + 20); setBase(products[index]?.price +20); }
+        else if (e === 'X-Large') { setPrice(products[index]?.price + 30); setBase(products[index]?.price+30); }
+        else { setPrice(products[index]?.price); setBase(products[index]?.price); }
     }
     const style = (e) => {
         if (e.target.style.borderColor === "black") {
@@ -34,23 +66,24 @@ function ItemDetails() {
 
     return (
         <>
-        <div className="itemdetails tw-scope flex items-center justify-center mx-auto mt-16">
-            <div className="idimage"><img src="shirt.jpg" height="100%" width="100%" alt="shirt" /></div>
-            <div className="details leading-normal mr-16">
-                <div className="tsdetail">T-Shirt with tape details</div>
-                <div className="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
-                <div className="pl-2 font-black text-2xl">${price}</div>
-                <div className="text-gray-500 pl-2">This graphic t-shirt which is perfect for any occassion. Crafted from a <br /> soft and breathable fabric, it offers superior comfort and style</div>
+        <div className="itemdetails flex items-center justify-center m-16">
+                <div className="idimage"><img src={products[index]?.image} height="100%" width="100%" alt="shirt" /></div>
+            <div className="details leading-normal ml=12 mr-13">
+                    <div className="tsdetail">{ products[index]?.title}</div>
+                    <div className="rating-row">⭐⭐⭐⭐ <span className="bold">{products[index]?.rating?.rate}</span></div>
+                    <div className="pl-2 font-black text-2xl">$ {price} </div>
+                    <div className="text-gray-500 pl-2">{products[index]?.description}</div>
+                    <br/>
                 <hr />
-                <div className="mt-4 pl-2 text-gray-500">Select Colors</div>
-                <div className="flex pl-2 gap-2 h-14">
+                <div className="mt-1 pl-2 text-gray-500">Select Colors</div>
+                <div className="flex mb-2 pl-2 gap-2 h-14">
                     <button onClick={(e) => { style(e) }} className="w-9 h-9 p-0 m-0 mt-2 bg-emerald-800 rounded-full cursor-pointer border-0"></button>
                     <button onClick={(e) => { style(e) }} className="w-9 h-9 p-0 m-0 mt-2 bg-red-500 rounded-full cursor-pointer border-0"></button>
                     <button onClick={(e) => { style(e) }} className="w-9 h-9 p-0 m-0 mt-2 bg-sky-900 rounded-full cursor-pointer border-0"></button>
                 </div>
                 <hr />
-                <div className="mt-4 pl-2 text-gray-500">Choose Size</div>
-                <div className="flex pl-2 gap-2 h-14">
+                <div className="mt-1 pl-2 text-gray-500">Choose Size</div>
+                <div className="flex mb-3 pl-2 gap-2 h-14">
                     {sizes.map((size) => (
                         <button
                             key={size}
@@ -71,50 +104,15 @@ function ItemDetails() {
                             {value}
                             <button onClick={() => { setValue(prev=>prev + 1); setPrice(base * (value+1)); }} className="cursor-pointer h-[10%]  text-10x1 bg-[#F0F0F0] border-0 text-black font-black">➕</button>
                         </button>
-                        <button onClick={() => { setSize(selectedSize); setCart(false); }} className="cursor-pointer w-[62%] h-[55%] bg-black">{cart?("Add to cart"):("Added to cart")}</button>
+                        <button
+                            onClick={() => { setSize({ index: index, size: selectedSize }); setCart(false); }}
+                            className="cursor-pointer w-[62%] h-[55%] bg-black"
+                        >
+                            {cart ? ("Add to cart") : ("Added to cart")}
+                        </button>
                 </div>
             </div>
         </div>
-         <div className="newarrivals">
-          <div className="na">YOU MIGHT ALSO LIKE</div>
-          <div className="cards-container">
-              <Link to="/ItemDetails">
-                  <div className="nd">
-                      <div className="im"><img src="/shirt.jpg" height="100%" width="100%" /></div>
-                      <div className="bold">T-Shirt with tape details</div>
-                      <div className="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
-                      <div className="bold">$ 120</div>
-                  </div>
-              </Link>
-              <Link to="/ItemDetails">
-                  <div className="nd">
-                      <div className="im"><img src="/shirt.jpg" height="100%" width="100%" /></div>
-                      <div className="bold">T-Shirt with tape details</div>
-                            <div className="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
-                      <div className="bold">$ 120</div>
-                  </div>
-              </Link>
-              <Link to="/ItemDetails">
-                  <div className="nd">
-                      <div className="im"><img src="/shirt.jpg" height="100%" width="100%" /></div>
-                      <div className="bold">T-Shirt with tape details</div>
-                            <div className="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
-                      <div className="bold">$ 120</div>
-                  </div>
-              </Link>
-              <Link to="/ItemDetails">
-                  <div className="nd">
-                      <div className="im"><img src="/shirt.jpg" height="100%" width="100%" /></div>
-                      <div className="bold">T-Shirt with tape details</div>
-                            <div className="rating-row">⭐⭐⭐⭐ <span className="bold">3.5/5</span></div>
-                      <div className="bold">$ 120</div>
-                  </div>
-              </Link>
-          </div>
-          <div>
-              <Link to="/Shop"><center><button className="view">View All</button> </center></Link>
-          </div>
-      </div>
       </>
     );
 }
