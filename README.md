@@ -78,20 +78,6 @@ Figma-website/                 ← repo root (solution)
 ```
 > Adjust the `src/` layout above to match what's actually there — this reflects the general shape, not a confirmed file listing.
 
-## Deployment
-
-Hosted on **Vercel**, with a custom domain (`sharjeel.site`) pointed through GoDaddy DNS.
-
-Since this is a client-side-routed SPA, Vercel needs a rewrite rule so refreshing a non-root route (e.g. `/checkout`) doesn't 404. Add a `vercel.json` next to `package.json`:
-
-```json
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
-```
-
 ## Development Notes
 
 - **CSS collisions:** Tailwind's Preflight reset clashed with existing component styles, so component-specific classes are prefixed (e.g. `rf-`) to keep them isolated.
