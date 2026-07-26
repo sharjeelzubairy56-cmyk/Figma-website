@@ -1,100 +1,108 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+# SHOP.CO
 
-function Products() {
-    const [ind, setInd] = useState();
-    const [arr, setArr] = useState([])
-    const [products, setProducts] = useState([]);
-    const [check, setCheck] = useState(false);
-    const API = "https://fakestoreapi.com/products";
-    const array = (e) => {
-        setArr(prev => [...prev, e]);
-    }
-    const delarray = (e) => {
-        setArr(prev => prev.filter((_, i) => i !== e));
-    };
-    const getdata = async () => {
-        try {
-            const res = await axios.get(API);
-            setProducts(res.data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    const fun = () => {
-        if (!check) { setCheck(true); }
-        else { setCheck(false); }
-    };
-    const i = (e) => {
-        setInd(e);
-    };
-    useEffect(() => {
-        getdata();
-    }, []);
+**A React + Tailwind rebuild of a Figma e-commerce storefront design.**
 
-    return (
-        <>
-            {products.map((product, index) => (
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?logo=tailwindcss&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-v7-CA4245?logo=reactrouter&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white)
 
-                <div className="flexx" key={product.id} >
-                    <button onClick={() => { i(index); fun(); }}>
-                        <div>The id is {product.id}</div>
-                        <div>The title is {product.title}</div>
-                        <div>The price is {product.price}</div>
-                        <div>The description is {product.description}</div>
-                        <div>The category is {product.category}</div>
-                        <div>
-                            <b>The image is:</b>
-                            <img src={product.image} alt={product.title} width="100" />
-                        </div>
-                        <div>The rate is {product.rating?.rate}</div>
-                        <div>The count is {product.rating?.count}</div>
-                        <hr />
-                    </button>
-                </div>
+---
 
-            ))}
-            {check && (
-                <>
-                    <h1>HI I am the product details</h1>
-                    <div>The id is {products[ind].id}</div>
-                    <div>The title is {products[ind].title}</div>
-                    <div>The price is {products[ind].price}</div>
-                    <div>The description is {products[ind].description}</div>
-                    <div>The category is {products[ind].category}</div>
-                    <div>
-                        <b>The image is:</b>
-                        <img src={products[ind].image} alt={products[ind].title} width="100" />
-                    </div>
-                    <div>The rate is {products[ind].rating?.rate}</div>
-                    <div>The count is {products[ind].rating?.count}</div>
-                    <button onClick={()=>array(ind)}>Add to cart</button>
-                    <hr />
-                </>
-            )
-            }
-            {arr.length == 0 ? (<div>Sorry nothing is in the cart rn</div>) : (
-                    arr.map((index,i) => (
-                        <>
-                            <h1>HI I am the cart</h1>
-                            <div key={i}>The id is {products[index].id}</div>
-                            <div>The title is {products[index].title}</div>
-                            <div>The price is {products[index].price}</div>
-                            <div>The description is {products[index].description}</div>
-                            <div>The category is {products[index].category}</div>
-                            <div>
-                                <b>The image is:</b>
-                                <img src={products[index].image} alt={products[index].title} width="100" />
-                            </div>
-                            <div>The rate is {products[index].rating?.rate}</div>
-                            <div>The count is {products[index].rating?.count}</div>
-                            <button onClick={()=>delarray(i)}>delete</button>
-                            <hr />
-                        </>
-                    ))
-            )}
-        </>
-    );
+## About
+
+SHOP.CO takes a Figma e-commerce design and rebuilds it as an actual working app — product browsing, cart, and checkout wired up with real client-side routing and shared state, not static mockups. It's a hands-on project for practicing React fundamentals (hooks, Context, routing) by shipping something real, end to end.
+
+## Features
+
+- Storefront UI translated from Figma into responsive React components
+- Client-side routing between pages (Home, Shop, Cart, Checkout, etc.) via React Router
+- Cart and checkout state shared across routes with React Context (`useContext`) instead of prop drilling
+- Utility-first styling with Tailwind CSS v4
+
+## Tech Stack
+
+| Layer | Tool |
+|---|---|
+| UI | React (Vite) |
+| Routing | React Router DOM `^7.18.1` |
+| Styling | Tailwind CSS `^4.3.3` + `@tailwindcss/vite` |
+| HTTP client | Axios `^1.18.1` |
+| Hosting | Vercel — custom domain via GoDaddy |
+| IDE | Visual Studio (`.slnx` / `.esproj`) |
+
+## Getting Started
+
+### Prerequisites
+- Node.js 20+ (required by Tailwind CSS v4)
+- npm
+
+### Install & run
+```bash
+git clone <your-repo-url>
+cd Figma-website/Figma-website   # folder that contains package.json
+npm install
+npm run dev
+```
+Runs at `http://localhost:5173` by default.
+
+### Build for production
+```bash
+npm run build
+npm run preview   # sanity-check the production build locally
+```
+
+### Opening in Visual Studio
+The repo is set up as a VS solution — open `Figma-website.slnx` directly and Visual Studio loads the project through `figma-website.esproj`. Use the built-in **Git Changes** panel for source control if you'd rather not touch the CLI.
+
+## Project Structure
+
+```text
+Figma-website/                 ← repo root (solution)
+├── Figma-website.slnx         ← Visual Studio solution file
+├── Figma-website/             ← Vite + React app
+│   ├── figma-website.esproj
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── index.html
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── context/           ← CartContext, etc.
+│       ├── App.jsx
+│       └── main.jsx
+├── .gitattributes
+├── .gitignore
+└── README.md
+```
+> Adjust the `src/` layout above to match what's actually there — this reflects the general shape, not a confirmed file listing.
+
+## Deployment
+
+Hosted on **Vercel**, with a custom domain (`sharjeel.site`) pointed through GoDaddy DNS.
+
+Since this is a client-side-routed SPA, Vercel needs a rewrite rule so refreshing a non-root route (e.g. `/checkout`) doesn't 404. Add a `vercel.json` next to `package.json`:
+
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
+```
 
-export default Products;
+## Development Notes
+
+- **CSS collisions:** Tailwind's Preflight reset clashed with existing component styles, so component-specific classes are prefixed (e.g. `rf-`) to keep them isolated.
+- **Case sensitivity:** Vercel builds on Linux, which is case-sensitive for filenames and imports even when local Windows dev isn't — a mismatch here has broken builds before, so import paths are kept exact-case.
+- **Shared cart state:** Cart and checkout talk to each other through a `CartContext` provider instead of passing props down through every route.
+
+## License
+
+Personal/educational project — no license applied yet.
+
+## Author
+
+**Sharjeel Zubairy**
+BS Artificial Intelligence, FAST-NUCES Lahore
